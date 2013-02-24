@@ -1,5 +1,18 @@
 # Aura generator [![Build Status](https://secure.travis-ci.org/yeoman-aura/generator-aura.png?branch=master)](http://travis-ci.org/yeoman-aura/generator-aura)
 
+```
+=====================================
+                             _
+      /\                    (_)
+     /  \  _   _ _ __ __ _   _ ___
+    / /\ \| | | | '__/ _` | | / __|
+   / ____ \ |_| | | | (_| |_| \__ \
+  /_/    \_\__,_|_|  \__,_(_) |___/
+                           _/ |
+                          |__/
+=====================================
+```
+
 Maintainer: [Vitaly Domnikov](https://github.com/dotCypress)
 
 ## Usage

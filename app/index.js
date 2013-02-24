@@ -8,10 +8,15 @@ var separator = '\n=====================================';
 
 function AppGenerator() {
   yeoman.generators.Base.apply(this, arguments);
+
   this.argument('appname', { type: String, required: false });
   this.appname = this.appname || path.basename(process.cwd());
 
   this.sourceRoot(path.join(path.dirname(__dirname), 'templates'));
+
+  this.hookFor('aura:widget', {
+    args: ['title']
+  });
 
   this.on('end', function () {
     console.info(separator);
@@ -63,6 +68,10 @@ AppGenerator.prototype.bower = function bower() {
   this.copy('common/bowerrc', '.bowerrc');
 };
 
+AppGenerator.prototype.readme = function readme() {
+  this.template('common/readme.md', 'readme.md');
+}
+
 AppGenerator.prototype.packageJson = function packageJson() {
   this.template('common/package.json', 'package.json');
 };
@@ -87,5 +96,5 @@ AppGenerator.prototype.app = function app() {
   this.template('app/index.html', 'app/index.html');
   this.template('app/main.js', 'app/main.js');
   this.template('styles/reset.css', 'app/styles/reset.css');
-  this.template('widgets/main.js', 'app/widgets/title/main.js');
+
 };
