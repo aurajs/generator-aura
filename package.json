@@ -1,7 +1,7 @@
 {
   "name": "generator-aura",
   "version": "0.0.1",
-  "description": "Yeoman generator for Aura",
+  "description": "Yeoman generator for Aura.js",
   "keywords": [
     "yeoman-generator",
     "yeoman",
@@ -9,13 +9,13 @@
     "framework",
     "aura"
   ],
-  "homepage": "https://github.com/dotCypress/generator-aura",
+  "homepage": "https://github.com/yeoman-aura/generator-aura",
   "bugs": "https://github.com/yeoman/generator-aura/issues",
-  "author": "Chrome Developer Relations",
+  "author": "Vitaly Domnikov <dotcypress@gmail.com>",
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/dotCypress/generator-aura.git"
+    "url": "git://github.com/yeoman-aura/generator-aura.git"
   },
   "scripts": {
     "test": "mocha --reporter spec"

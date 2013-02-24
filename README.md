@@ -1,4 +1,4 @@
-# Aura generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-aura.png?branch=master)](http://travis-ci.org/dotCypress/generator-aura)
+# Aura generator [![Build Status](https://secure.travis-ci.org/yeoman-aura/generator-aura.png?branch=master)](http://travis-ci.org/yeoman-aura/generator-aura)
 
 Maintainer: [Vitaly Domnikov](https://github.com/dotCypress)
 
