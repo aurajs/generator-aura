@@ -1,0 +1,8 @@
+Description:
+  Creates a new aura extension
+
+Example:
+  yeoman init aura:extension thing
+
+  This will create:
+    app/extensions/thin.js

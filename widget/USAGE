@@ -1,0 +1,8 @@
+Description:
+  Creates a new aura widget
+
+Example:
+  yeoman init aura:widget thing
+
+  This will create:
+    app/widgets/thin/main.js
