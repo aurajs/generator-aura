@@ -3,17 +3,17 @@ var path = require('path');
 var util = require('util');
 var yeoman = require('yeoman-generator');
 
-module.exports = Generator;
+module.exports = ExtensionGenerator;
 
-function Generator() {
+function ExtensionGenerator() {
   yeoman.generators.Base.apply(this, arguments);
   this.sourceRoot(path.join(path.dirname(__dirname), 'templates'));
-  this.argument('extensionname', { type: String, required: true });
+  this.argument('name', { type: String, required: true });
 }
 
-util.inherits(Generator, yeoman.generators.Base);
+util.inherits(ExtensionGenerator, yeoman.generators.Base);
 
-Generator.prototype.creatExtensionFiles = function creatExtensionFiles() {
-  this.template('extensions/main.js', 'app/extensions/' + this.extensionname + '.js');
+ExtensionGenerator.prototype.creatExtensionFiles = function creatExtensionFiles() {
+  this.template('extensions/main.js', 'app/extensions/' + this.name + '.js');
   // TODO: generate test
 };

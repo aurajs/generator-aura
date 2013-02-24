@@ -1,0 +1,8 @@
+Description:
+  Creates a new aura webapp
+
+Example:
+  yo aura [name]
+
+  This will create:
+    app/extensions/thin.js

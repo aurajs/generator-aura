@@ -2,7 +2,7 @@ Description:
   Creates a new aura widget
 
 Example:
-  yeoman init aura:widget thing
+  yo aura:widget name
 
   This will create:
-    app/widgets/thin/main.js
+    app/widgets/name/main.js
