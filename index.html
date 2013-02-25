@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Generator-aura by yeoman-aura</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Generator-aura</h1>
+        <h2>Yeoman generator for Aura.js</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/yeoman-aura/generator-aura/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/yeoman-aura/generator-aura/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/yeoman-aura/generator-aura" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>Aura generator for Yeoman</h1>
+
+<pre><code>=====================================
+                             _
+      /\                    (_)
+     /  \  _   _ _ __ __ _   _ ___
+    / /\ \| | | | '__/ _` | | / __|
+   / ____ \ |_| | | | (_| |_| \__ \
+  /_/    \_\__,_|_|  \__,_(_) |___/
+                           _/ |
+                          |__/
+=====================================
+</code></pre>
+
+<p>Maintainer: <a href="https://github.com/dotCypress">Vitaly Domnikov</a></p>
+
+<h2>Usage</h2>
+
+<p>First make a new directory, and <code>cd</code> into it:</p>
+
+<pre><code>mkdir my-awesome-project &amp;&amp; cd $_
+</code></pre>
+
+<p>Then install <code>generator-aura</code>:</p>
+
+<pre><code>npm install generator-aura
+</code></pre>
+
+<p>Run <code>yo aura</code>, optionally passing an app name:</p>
+
+<pre><code>yo aura [app-name]
+</code></pre>
+
+<p>Finally, install npm and bower dependencies:</p>
+
+<pre><code>npm install &amp;&amp; bower install --dev
+</code></pre>
+
+<h2>Generators</h2>
+
+<p>Available generators:</p>
+
+<ul>
+<li><a href="#widget">aura:widget</a></li>
+<li><a href="#extension">aura:extension</a></li>
+<li><a href="#styles">aura:styles</a></li>
+</ul><h3>Widget</h3>
+
+<p>Generates a widget in <code>app/widgets</code>.</p>
+
+<p>Example:</p>
+
+<div class="highlight"><pre>yo aura:widget sample
+</pre></div>
+
+<p>Produces <code>app/widgets/sample/main.js</code></p>
+
+<h3>Extension</h3>
+
+<p>Generates a extension in <code>app/extensions</code>.</p>
+
+<p>Example:</p>
+
+<div class="highlight"><pre>yo aura:extension storage
+</pre></div>
+
+<p>Produces <code>app/extensions/storage.js</code></p>
+
+<h3>Styles</h3>
+
+<p>Generates cool styles.</p>
+
+<p>Example:</p>
+
+<div class="highlight"><pre>yo aura:styles
+</pre></div>
+
+<h4>Supported types:</h4>
+
+<ul>
+<li>Default (normalize.css)</li>
+<li>Twitter Bootstrap</li>
+<li>Twitter Bootstrap for Compass</li>
+<li>Zurb Foundation</li>
+</ul><h2>Contribute</h2>
+
+<p>See the <a href="https://github.com/yeoman/yeoman/blob/master/contributing.md">contributing docs</a></p>
+
+<h2>License</h2>
+
+<p><a href="http://opensource.org/licenses/bsd-license.php">BSD license</a></p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
