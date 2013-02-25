@@ -72,15 +72,21 @@ AppGenerator.prototype.readme = function readme() {
   this.template('common/readme.md', 'readme.md');
 }
 
+AppGenerator.prototype.spec = function spec() {
+  this.template('spec/index.html', 'spec/index.html');
+  this.template('spec/runner.js', 'spec/runner.js');
+}
+
 AppGenerator.prototype.packageJson = function packageJson() {
   this.template('common/package.json', 'package.json');
 };
 
 AppGenerator.prototype.gruntFile = function gruntFile() {
-  this.template('common/Gruntfile.js', 'Gruntfile.js');
+  this.copy('common/Gruntfile.js', 'Gruntfile.js');
 };
 
 AppGenerator.prototype.createDirLayout = function createDirLayout() {
+  this.mkdir('spec');
   this.mkdir('app');
   this.mkdir('app/styles');
   this.mkdir('app/images');
@@ -92,9 +98,10 @@ AppGenerator.prototype.app = function app() {
   this.copy('app/favicon.ico', 'app/favicon.ico');
   this.copy('app/404.html', 'app/404.html');
   this.copy('app/robots.txt', 'app/robots.txt');
+  this.copy('app/crossdomain.xml', 'app/crossdomain.xml');
   this.copy('app/htaccess', 'app/.htaccess');
   this.template('app/index.html', 'app/index.html');
   this.template('app/main.js', 'app/main.js');
-  this.template('styles/reset.css', 'app/styles/reset.css');
-
+  this.template('styles/normalize.css', 'app/styles/normalize.css');
+  this.template('styles/main.css', 'app/styles/main.css');
 };

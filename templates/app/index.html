@@ -10,7 +10,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -19,8 +20,7 @@
 
     <!-- Add your site or application content here -->
     <div>
-      <h1><%= _.camelize(appname) %></h1>
-      <div data-aura-widget="title"></div>
+      <h1 data-aura-widget="title"><%= _.camelize(appname) %></h1>
     </div>
 
     <script data-main="main" src="components/requirejs/require.js"></script>

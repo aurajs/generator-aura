@@ -4,13 +4,23 @@ define(['underscore'], function (_) {
 
     initialize: function () {
       _.bindAll(this);
-       this.render();
+
+      this.$el.click(this.someCoolFeature)
+      this.render();
     },
 
     render: function () {
-      this.$el.html('<h1>Hello Aura!</h1>');
-    }
+      //Place render logic here
+      this.$el.html('Click me: ' + this.$el.html());
+    },
 
+    someCoolFeature: function(){
+      //Awesome code
+      var element = this.$el;
+      element.fadeOut(200, function(){
+        element.fadeIn(200);
+      });
+    }
   };
 
 });
