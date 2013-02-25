@@ -1,4 +1,4 @@
-# Aura generator gor Yeoman [![Build Status](https://secure.travis-ci.org/yeoman-aura/generator-aura.png?branch=master)](http://travis-ci.org/yeoman-aura/generator-aura)
+# Aura generator for Yeoman [![Build Status](https://secure.travis-ci.org/yeoman-aura/generator-aura.png?branch=master)](http://travis-ci.org/yeoman-aura/generator-aura)
 
 ```
 =====================================
@@ -67,7 +67,6 @@ Produces `app/extensions/storage.js`:
 ## Contribute
 
 See the [contributing docs](https://github.com/yeoman/yeoman/blob/master/contributing.md)
-
 
 ## License
 
