@@ -390,7 +390,7 @@ fieldset {
 
 /*
  * 1. Corrects color not being inherited in IE6/7/8/9
- * 2. Corrects text not wrapping in FF3 
+ * 2. Corrects text not wrapping in FF3
  * 3. Corrects alignment displayed oddly in IE6/7
  */
 legend {
@@ -778,6 +778,13 @@ dt {
   float: right;
   margin-right: 10px;
   font-size: 11px;
+}
+
+#logo {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  display: block;
 }
 
 section {
