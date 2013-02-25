@@ -1,0 +1,8 @@
+Description:
+  Generates css files
+
+Example:
+  yo aura:styles
+
+  This will create:
+    app/styles/[*.css]

@@ -3,6 +3,7 @@
 module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -84,18 +85,38 @@ module.exports = function (grunt) {
         }
       }
     },
+    compass: {
+      options: {
+        sassDir : '<%= yeoman.app %>/styles',
+        cssDir: '<%= yeoman.app %>/styles',
+        imagesDir: '<%= yeoman.app %>/images',
+        javascriptsDir: '<%= yeoman.app %>/scripts',
+        fontsDir: '<%= yeoman.app %>/styles/fonts',
+        importPath: '<%= yeoman.app %>/components',
+        force: true,
+        relativeAssets: true
+      },
+      main: {}
+    },
     mocha: {
       all: {
         options: {
           urls: ['http://localhost:<%= connect.server.options.port %>/spec/index.html']
-        }
+        },
+        dist: {},
       }
     },
     watch: {
-      files: [
-        '**/*.js'
-      ],
-      tasks: ['spec']
+      compass: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        tasks: ['compass']
+      },
+      spec: {
+        files: [
+          '**/*.js'
+        ],
+        tasks: ['spec']
+      }
     },
     clean: {
       dist: ['<%= yeoman.dist %>/**']
@@ -103,6 +124,6 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('spec', ['jshint', 'connect', 'mocha']);
-  grunt.registerTask('build', ['clean', 'spec', 'copy', 'requirejs']);
-  grunt.registerTask('default', ['spec', 'watch']);
+  grunt.registerTask('build', ['clean', 'compass', 'spec', 'copy', 'requirejs']);
+  grunt.registerTask('default', ['compass', 'spec', 'watch']);
 };
