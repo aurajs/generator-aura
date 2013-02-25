@@ -43,6 +43,7 @@ Available generators:
 
 * [aura:widget](#widget)
 * [aura:extension](#extension)
+* [aura:styles](#styles)
 
 ### Widget
 Generates a widget in `app/widgets`.
@@ -52,7 +53,7 @@ Example:
 yo aura:widget sample
 ```
 
-Produces `app/widgets/sample/main.js`:
+Produces `app/widgets/sample/main.js`
 
 ### Extension
 Generates a extension in `app/extensions`.
@@ -62,7 +63,22 @@ Example:
 yo aura:extension storage
 ```
 
-Produces `app/extensions/storage.js`:
+Produces `app/extensions/storage.js`
+
+### Styles
+Generates cool styles.
+
+Example:
+```bash
+yo aura:styles
+```
+
+#### Supported types:
+
+* Default (normalize.css)
+* Twitter Bootstrap
+* Twitter Bootstrap for Compass
+* Zurb Foundation
 
 ## Contribute
 
