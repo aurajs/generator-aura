@@ -49,7 +49,7 @@ AppGenerator.prototype.someQuestions = function someQuestions() {
 };
 
 AppGenerator.prototype.git = function git() {
-  this.copy('/common/gitignore', '.gitignore');
+  this.copy('common/gitignore', '.gitignore');
   this.copy('common/gitattributes', '.gitattributes');
 };
 
