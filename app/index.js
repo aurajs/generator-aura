@@ -18,8 +18,6 @@ function AppGenerator() {
     args: ['title']
   });
 
-   this.hookFor('aura:styles');
-
   this.on('end', function () {
     console.info(separator);
     console.info('\nReady.'.bold);
@@ -104,4 +102,8 @@ AppGenerator.prototype.app = function app() {
   this.copy('app/htaccess', 'app/.htaccess');
   this.template('app/index.html', 'app/index.html');
   this.template('app/main.js', 'app/main.js');
+};
+
+AppGenerator.prototype.styles = function styles() {
+   this.invoke('aura:styles');
 };

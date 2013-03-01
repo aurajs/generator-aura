@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "yeoman-generator": "https://github.com/yeoman/generator/archive/master.tar.gz"
-    },
+  },
   "devDependencies": {
     "mocha": "~1.8.1"
   },
