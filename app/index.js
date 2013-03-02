@@ -13,21 +13,6 @@ function AppGenerator() {
   this.appname = this.appname || path.basename(process.cwd());
 
   this.sourceRoot(path.join(path.dirname(__dirname), 'templates'));
-
-  this.hookFor('aura:styles', {
-    args: []
-  });
-
-  this.hookFor('aura:widget', {
-    args: ['title']
-  });
-
-  this.on('end', function () {
-    console.info(separator);
-    console.info('\nReady.'.bold);
-    console.info('\nJust run ' + 'npm install'.bold.yellow +' and ' + 'bower install --dev'.bold.yellow + ' to install the required dependencies.');
-    console.info(separator);
-  });
 }
 
 util.inherits(AppGenerator, yeoman.generators.Base);
@@ -106,4 +91,23 @@ AppGenerator.prototype.app = function app() {
   this.copy('app/htaccess', 'app/.htaccess');
   this.template('app/index.html', 'app/index.html');
   this.template('app/main.js', 'app/main.js');
+};
+
+AppGenerator.prototype.styles = function styles() {
+   this.invoke('aura:styles', {
+    args: []
+  });
+};
+
+AppGenerator.prototype.widget = function widget() {
+  this.invoke('aura:widget', {
+    args: ['title']
+  });
+};
+
+AppGenerator.prototype.hint = function hint() {
+  console.info(separator);
+  console.info('\nReady.'.bold);
+  console.info('\nJust run ' + 'npm install'.bold.yellow +' and ' + 'bower install --dev'.bold.yellow + ' to install the required dependencies.');
+  console.info(separator);
 };

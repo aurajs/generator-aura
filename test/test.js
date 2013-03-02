@@ -23,63 +23,6 @@ describe('Aura generator', function() {
       done();
     });
   });
-
-  it ('should generate foundation styles', function (done) {
-    var deps = ['../../styles'];
-    var stylesGenerator = helpers.createGenerator('aura:styles', deps);
-    helpers.mockPrompt(stylesGenerator, {'styles': 'f'});
-    stylesGenerator.run([], function() {
-      helpers.assertFiles([
-        'app/styles/foundation.css',
-        'app/styles/main.css'
-      ]);
-      done();
-    });
-  });
-
-  it ('should generate bootstrap compass styles', function (done) {
-    var deps = ['../../styles'];
-    var stylesGenerator = helpers.createGenerator('aura:styles', deps);
-    helpers.mockPrompt(stylesGenerator, {'styles': 'b4c'});
-    stylesGenerator.run([], function() {
-      helpers.assertFiles([
-        // 'app/styles/_compass_twitter_bootstrap_awesome.scss',
-        'app/images/glyphicons-halflings.png',
-        'app/images/glyphicons-halflings-white.png',
-        'app/styles/main.scss'
-      ]);
-      done();
-    });
-  });
-
-  it ('should generate bootstrap styles', function (done) {
-    var deps = ['../../styles'];
-    var stylesGenerator = helpers.createGenerator('aura:styles', deps);
-    helpers.mockPrompt(stylesGenerator, {'styles': 'b'});
-    stylesGenerator.run([], function() {
-      helpers.assertFiles([
-        'app/styles/bootstrap.css',
-        'app/images/glyphicons-halflings.png',
-        'app/images/glyphicons-halflings-white.png',
-        'app/styles/main.css'
-      ]);
-      done();
-    });
-  });
-
-  it ('should generate base styles', function (done) {
-    var deps = ['../../styles'];
-    var stylesGenerator = helpers.createGenerator('aura:styles', deps);
-    helpers.mockPrompt(stylesGenerator, {'styles': 'D'});
-    stylesGenerator.run([], function() {
-      helpers.assertFiles([
-        'app/styles/normalize.css',
-        'app/styles/main.css'
-      ]);
-      done();
-    });
-  });
-
   it ('should generate git files', function (done) {
     helpers.mockPrompt(auraGeneraor, {'styles': 'D'});
     auraGeneraor.run({}, function() {
@@ -168,6 +111,63 @@ describe('Aura generator', function() {
     var widgetGenerator = helpers.createGenerator('aura:extension', deps, ['coolExtension']);
     widgetGenerator.run([], function() {
       helpers.assertFiles(['app/extensions/coolExtension.js']);
+      done();
+    });
+  });
+
+
+  it ('should generate foundation styles', function (done) {
+    var deps = ['../../styles'];
+    var stylesGenerator = helpers.createGenerator('aura:styles', deps);
+    helpers.mockPrompt(stylesGenerator, {'styles': 'f'});
+    stylesGenerator.run([], function() {
+      helpers.assertFiles([
+        'app/styles/foundation.css',
+        'app/styles/main.css'
+      ]);
+      done();
+    });
+  });
+
+  it ('should generate bootstrap compass styles', function (done) {
+    var deps = ['../../styles'];
+    var stylesGenerator = helpers.createGenerator('aura:styles', deps);
+    helpers.mockPrompt(stylesGenerator, {'styles': 'b4c'});
+    stylesGenerator.run([], function() {
+      helpers.assertFiles([
+        // 'app/styles/_compass_twitter_bootstrap_awesome.scss',
+        'app/images/glyphicons-halflings.png',
+        'app/images/glyphicons-halflings-white.png',
+        'app/styles/main.scss'
+      ]);
+      done();
+    });
+  });
+
+  it ('should generate bootstrap styles', function (done) {
+    var deps = ['../../styles'];
+    var stylesGenerator = helpers.createGenerator('aura:styles', deps);
+    helpers.mockPrompt(stylesGenerator, {'styles': 'b'});
+    stylesGenerator.run([], function() {
+      helpers.assertFiles([
+        'app/styles/bootstrap.css',
+        'app/images/glyphicons-halflings.png',
+        'app/images/glyphicons-halflings-white.png',
+        'app/styles/main.css'
+      ]);
+      done();
+    });
+  });
+
+  it ('should generate base styles', function (done) {
+    var deps = ['../../styles'];
+    var stylesGenerator = helpers.createGenerator('aura:styles', deps);
+    helpers.mockPrompt(stylesGenerator, {'styles': 'D'});
+    stylesGenerator.run([], function() {
+      helpers.assertFiles([
+        'app/styles/normalize.css',
+        'app/styles/main.css'
+      ]);
       done();
     });
   });
