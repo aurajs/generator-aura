@@ -14,10 +14,6 @@ function AppGenerator() {
 
   this.sourceRoot(path.join(path.dirname(__dirname), 'templates'));
 
-  this.hookFor('aura:widget', {
-    args: ['title']
-  });
-
   this.on('end', function () {
     console.info(separator);
     console.info('\nReady.'.bold);
@@ -29,7 +25,7 @@ function AppGenerator() {
 util.inherits(AppGenerator, yeoman.generators.Base);
 
 AppGenerator.prototype.someQuestions = function someQuestions() {
-  var welcome =separator.yellow +
+  var welcome = separator.yellow +
     '\n                             _'.red.bold +
     '\n      /\\                    '.yellow.bold + '(_)'.red.bold +
     '\n     /  \\  _   _ _ __ __ _   '.yellow.bold + '_ ___ '.red.bold +
@@ -105,5 +101,11 @@ AppGenerator.prototype.app = function app() {
 };
 
 AppGenerator.prototype.styles = function styles() {
-   this.invoke('aura:styles');
+  this.invoke('aura:styles');
+};
+
+AppGenerator.prototype.widget = function widget() {
+  this.invoke('aura:widget', {
+    args: ['title']
+  });
 };
