@@ -18,7 +18,7 @@
     "url": "git://github.com/yeoman-aura/generator-aura.git"
   },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec -t 10000"
   },
   "dependencies": {
     "yeoman-generator": "~0.10.2"

@@ -13,7 +13,7 @@ function StylesGenerator() {
 
 util.inherits(StylesGenerator, yeoman.generators.Base);
 
-StylesGenerator.prototype.interactive = function _interactive() {
+StylesGenerator.prototype.interactive = function interactive() {
   var cb = this.async();
 
   var prompts = [{
@@ -36,7 +36,6 @@ StylesGenerator.prototype.interactive = function _interactive() {
   }.bind(this));
 };
 
-
 StylesGenerator.prototype.scaffold = function scaffold() {
   if(this.styles === 'b'){
     this._bootstrap();
@@ -57,13 +56,13 @@ StylesGenerator.prototype._normalizeCss = function _normalizeCss() {
 };
 
 StylesGenerator.prototype._bootstrap = function _bootstrapC() {
-  this.copy('styles/bootstrap/bootstrap.css', 'app/styles/bootstrap');
+  this.copy('styles/bootstrap/bootstrap.css', 'app/styles/bootstrap.css');
   this.copy('styles/bootstrap/glyphicons-halflings.png', 'app/images/glyphicons-halflings.png');
   this.copy('styles/bootstrap/glyphicons-halflings-white.png', 'app/images/glyphicons-halflings-white.png');
   this.write('app/styles/main.css', '@import "bootstrap.css";');
 };
 
-StylesGenerator.prototype._bootstrapCompass = function _bootstrapCompass() {
+StylesGenerator.prototype._bootstrapCompass = function _bootstrapCompass(cb) {
   var cb = this.async();
 
   this.write('app/styles/main.scss', '@import "compass_twitter_bootstrap_awesome";');
@@ -80,7 +79,7 @@ StylesGenerator.prototype._bootstrapCompass = function _bootstrapCompass() {
 };
 
 StylesGenerator.prototype._foundation = function _foundation() {
-  this.copy('styles/foundation/foundation.css', 'app/styles/foundation');
+  this.copy('styles/foundation/foundation.css', 'app/styles/foundation.css');
   this.write('app/styles/main.css', '@import "foundation.css";');
 };
 
