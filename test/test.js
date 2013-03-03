@@ -3,12 +3,14 @@
 var assert = require('assert');
 var path = require('path');
 var helpers = require('yeoman-generator').test;
+var path = require('path');
 
 describe('Aura generator', function() {
 
   var auraGeneraor;
 
   beforeEach(function(done) {
+    process.chdir(__dirname);
     var deps = [
       '../../app',
       '../../styles',
