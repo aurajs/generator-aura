@@ -23,6 +23,22 @@ describe('Aura generator', function() {
       done();
     });
   });
+
+  it ('should create directory layout', function (done) {
+    helpers.mockPrompt(auraGeneraor, {'styles': 'D'});
+    auraGeneraor.run({}, function() {
+      helpers.assertFiles([
+        'spec',
+        'app',
+        'app/styles',
+        'app/images',
+        'app/widgets',
+        'app/extensions'
+      ]);
+      done();
+    });
+  });
+
   it ('should generate git files', function (done) {
     helpers.mockPrompt(auraGeneraor, {'styles': 'D'});
     auraGeneraor.run({}, function() {
@@ -94,8 +110,6 @@ describe('Aura generator', function() {
       done();
     });
   });
-
-  //TODO:       helpers.testDirectory
 
   it ('should generate widget', function (done) {
     var deps = ['../../widget'];
@@ -171,5 +185,4 @@ describe('Aura generator', function() {
       done();
     });
   });
-
 });
