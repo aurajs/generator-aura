@@ -1,5 +1,10 @@
 'use strict';
 
+var lrSnippet = require('connect-livereload')();
+var mountFolder = function (connect, dir) {
+    return connect.static(require('path').resolve(dir));
+};
+
 module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-connect');
@@ -8,6 +13,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-mocha');
 
   var yeomanConfig = {
@@ -15,16 +21,24 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
-  var PORT = 8765;
-
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     yeoman: yeomanConfig,
+    open: {
+      server: {
+        url: 'http://localhost:<%= connect.server.options.port %>/app'
+      }
+    },
     connect: {
       server: {
         options: {
-          port: PORT,
-          base: '.'
+          port: 9000,
+          middleware: function (connect) {
+            return [
+              lrSnippet,
+              mountFolder(connect, '.')
+            ];
+          }
         }
       }
     },
@@ -107,6 +121,9 @@ module.exports = function (grunt) {
       }
     },
     watch: {
+      options: {
+        livereload: true
+      },
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['compass']
@@ -116,7 +133,16 @@ module.exports = function (grunt) {
           '!node_modules/**/*.js',
           '**/*.js'
         ],
-        tasks: ['spec']
+        tasks: ['watch-spec']
+      },
+      livereload: {
+        files: [
+          'app/*.html',
+          'app/styles/*.css',
+          'app/{extensions,widgets}/*.js',
+          'app/images/*.{png,jpg,jpeg}'
+        ],
+        tasks: ['default']
       }
     },
     clean: {
@@ -124,7 +150,11 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.registerTask('server', ['connect:server', 'open', 'watch']);
   grunt.registerTask('spec', ['jshint', 'connect', 'mocha']);
+  // watch-spec allows us to use the spec task within a watch without having
+  // connect try to launch a server on each cycle (which throws a Fatal error);
+  grunt.registerTask('watch-spec', ['jshint', 'mocha']);
   grunt.registerTask('build', ['clean', 'compass', 'spec', 'copy', 'requirejs']);
   grunt.registerTask('default', ['compass', 'spec', 'watch']);
 };
