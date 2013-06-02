@@ -22,8 +22,8 @@ StylesGenerator.prototype.interactive = function interactive() {
     default: '\n D   : Default (normalize.css)'+
              '\n b   : Twitter Bootstrap'+
              '\n b4c : Twitter Bootstrap for Compass'+
-             '\n f   : Zurb Foundation'/*+
-             '\n f4c : Zurb Foundation for Compass'*/ //TODO: fix build or buy book about Ruby
+             '\n f   : Zurb Foundation' +
+             '\n f4c : Zurb Foundation for Compass' //TODO: fix build or buy book about Ruby
   }];
 
   this.prompt(prompts, function(err, props) {
@@ -88,7 +88,7 @@ StylesGenerator.prototype._foundationCompass = function _foundationCompass() {
 
   this.write('app/styles/main.scss', '@import "foundation";');
 
-  this.remote('zurb', 'foundation', '6bcce8afb9d64e7ada2e084170a2387e86b6bfda', function (err, remote) {
+  this.remote('zurb', 'foundation', '683f6cb090875fd77fd1cdb781c5b37e092167d4', function (err, remote) {
     if (err) {
       return cb(err);
     }
