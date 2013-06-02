@@ -113,6 +113,7 @@ module.exports = function (grunt) {
       },
       spec: {
         files: [
+          '!node_modules/**/*.js',
           '**/*.js'
         ],
         tasks: ['spec']
