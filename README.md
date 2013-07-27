@@ -1,6 +1,6 @@
-# Aura generator for Yeoman [![Build Status](https://secure.travis-ci.org/dotCypress/generator-aura.png?branch=master)](http://travis-ci.org/yeoman-aura/generator-aura)
+# Aura generator for Yeoman [![Build Status](https://secure.travis-ci.org/aurajs/generator-aura.png?branch=master)](http://travis-ci.org/aurajs/generator-aura)
 
-<img src="http://ru.gravatar.com/userimage/3193976/53730a1d436c157bf770c04232c2a72b.png?size=200" width="200px"/>
+<img src="http://en.gravatar.com/userimage/3193976/53730a1d436c157bf770c04232c2a72b.png?size=200" width="200px"/>
 
 
 ```
