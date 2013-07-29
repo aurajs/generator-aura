@@ -34,7 +34,7 @@ describe('Aura generator', function() {
         'app',
         'app/styles',
         'app/images',
-        'app/widgets',
+        'app/aura_components',
         'app/extensions'
       ]);
       done();
@@ -117,7 +117,7 @@ describe('Aura generator', function() {
     var deps = ['../../widget'];
     var widgetGenerator = helpers.createGenerator('aura:widget', deps, ['coolWidget']);
     widgetGenerator.run([], function() {
-      helpers.assertFiles(['app/widgets/coolWidget/main.js']);
+      helpers.assertFiles(['app/aura_components/coolWidget/main.js']);
       done();
     });
   });
