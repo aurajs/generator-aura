@@ -1,8 +1,8 @@
 require.config({
   paths: {
-    aura: 'components/aura/lib',
-    jquery: 'components/jquery/jquery',
-    underscore: 'components/underscore/underscore'
+    aura: 'bower_components/aura/lib',
+    jquery: 'bower_components/jquery/jquery',
+    underscore: 'bower_components/underscore/underscore'
   }
 });
 

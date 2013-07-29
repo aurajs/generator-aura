@@ -14,6 +14,6 @@ function WidgetGenerator() {
 util.inherits(WidgetGenerator, yeoman.generators.Base);
 
 WidgetGenerator.prototype.creatWidgetFiles = function creatWidgetFiles() {
-  this.template('widgets/main.js', 'app/widgets/' + this.name + '/main.js');
+  this.template('aura_components/main.js', 'app/aura_components/' + this.name + '/main.js');
   // TODO: generate test
 };
