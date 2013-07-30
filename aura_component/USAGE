@@ -1,8 +1,8 @@
 Description:
-  Creates a new aura widget
+  Creates a new aura component
 
 Example:
-  yo aura:widget name
+  yo aura:component name
 
   This will create:
-    app/widgets/name/main.js
+    app/aura_components/name/main.js

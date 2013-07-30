@@ -53,7 +53,7 @@ AppGenerator.prototype.travis = function travis() {
 };
 
 AppGenerator.prototype.bower = function bower() {
-  this.template('common/component.json', 'component.json');
+  this.template('common/bower.json', 'bower.json');
   this.copy('common/bowerrc', '.bowerrc');
 };
 
@@ -102,7 +102,7 @@ AppGenerator.prototype.component = function component() {
 AppGenerator.prototype.hint = function hint() {
   console.info(separator);
   console.info('\nReady.'.bold);
-  console.info('\nAfter selecting preffered style for your app just run ' + 'npm install'.bold.yellow +' and ' + 'bower install --dev'.bold.yellow + ' to install the required dependencies.');
+  console.info('\nAfter selecting preferred style for your app just run ' + 'npm install'.bold.yellow +' and ' + 'bower install --dev'.bold.yellow + ' to install the required dependencies.');
   console.info(separator);
 };
 

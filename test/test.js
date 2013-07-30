@@ -15,7 +15,7 @@ describe('Aura generator', function() {
       '../../app',
       '../../styles',
       '../../extension',
-      '../../widget'
+      '../../aura_components'
     ];
     helpers.testDirectory(path.join(__dirname, 'temp'), function(err) {
       if (err) {
