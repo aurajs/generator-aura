@@ -42,19 +42,19 @@ npm install && bower install --dev
 
 Available generators:
 
-* [aura:widget](#widget)
+* [aura:component](#aura_component)
 * [aura:extension](#extension)
 * [aura:styles](#styles)
 
-### Widget
-Generates a widget in `app/widgets`.
+### Aura Component
+Generates a component in `app/aura_components`.
 
 Example:
 ```bash
-yo aura:widget sample
+yo aura:component sample
 ```
 
-Produces `app/widgets/sample/main.js`
+Produces `app/aura_components/sample/main.js`
 
 ### Extension
 Generates a extension in `app/extensions`.

@@ -94,7 +94,7 @@ AppGenerator.prototype.app = function app() {
 };
 
 AppGenerator.prototype.component = function component() {
-  this.invoke('aura:aura_component', {
+  this.invoke('aura:component', {
     args: ['title']
   });
 };
