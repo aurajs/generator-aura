@@ -15,7 +15,7 @@ describe('Aura generator', function() {
       '../../app',
       '../../styles',
       '../../extension',
-      '../../aura_component'
+      '../../component'
     ];
     helpers.testDirectory(path.join(__dirname, 'temp'), function(err) {
       if (err) {
@@ -114,7 +114,7 @@ describe('Aura generator', function() {
   });
 
   it ('should generate component', function (done) {
-    var deps = ['../../aura_component'];
+    var deps = ['../../component'];
     var componentGenerator = helpers.createGenerator('aura:component', deps, ['coolComponent']);
     componentGenerator.run([], function() {
       helpers.assertFiles(['app/aura_components/coolComponent/main.js']);
