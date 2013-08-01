@@ -15,7 +15,7 @@ require(['aura/aura'], function (Aura) {
   Add your extensions here.
   app.use('extensions/sample');
   */
-  app.start({ components: 'body' }).then(function() {
+  app.start({ components: 'body' }).then(function () {
     console.log('Aura started...');
   });
 });
