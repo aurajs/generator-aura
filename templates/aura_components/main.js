@@ -3,9 +3,7 @@ define(['underscore'], function (_) {
   return {
 
     initialize: function () {
-      _.bindAll(this);
-
-      this.$el.click(this.someCoolFeature)
+      this.$el.on('click', this.someCoolFeature.bind(this));
       this.render();
     },
 

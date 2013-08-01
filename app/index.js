@@ -53,7 +53,7 @@ AppGenerator.prototype.travis = function travis() {
 };
 
 AppGenerator.prototype.bower = function bower() {
-  this.template('common/component.json', 'component.json');
+  this.template('common/bower.json', 'bower.json');
   this.copy('common/bowerrc', '.bowerrc');
 };
 
@@ -79,7 +79,7 @@ AppGenerator.prototype.createDirLayout = function createDirLayout() {
   this.mkdir('app');
   this.mkdir('app/styles');
   this.mkdir('app/images');
-  this.mkdir('app/widgets');
+  this.mkdir('app/aura_components');
   this.mkdir('app/extensions');
 };
 
@@ -93,14 +93,8 @@ AppGenerator.prototype.app = function app() {
   this.template('app/main.js', 'app/main.js');
 };
 
-AppGenerator.prototype.styles = function styles() {
-   this.invoke('aura:styles', {
-    args: []
-  });
-};
-
-AppGenerator.prototype.widget = function widget() {
-  this.invoke('aura:widget', {
+AppGenerator.prototype.component = function component() {
+  this.invoke('aura:component', {
     args: ['title']
   });
 };
@@ -108,6 +102,12 @@ AppGenerator.prototype.widget = function widget() {
 AppGenerator.prototype.hint = function hint() {
   console.info(separator);
   console.info('\nReady.'.bold);
-  console.info('\nJust run ' + 'npm install'.bold.yellow +' and ' + 'bower install --dev'.bold.yellow + ' to install the required dependencies.');
+  console.info('\nAfter selecting preferred style for your app just run ' + 'npm install'.bold.yellow +' and ' + 'bower install --dev'.bold.yellow + ' to install the required dependencies.');
   console.info(separator);
+};
+
+AppGenerator.prototype.styles = function styles() {
+   this.invoke('aura:styles', {
+    args: []
+  });
 };

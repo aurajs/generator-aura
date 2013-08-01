@@ -1,8 +1,0 @@
-Description:
-  Creates a new aura widget
-
-Example:
-  yo aura:widget name
-
-  This will create:
-    app/widgets/name/main.js

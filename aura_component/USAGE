@@ -1,0 +1,8 @@
+Description:
+  Creates a new aura component
+
+Example:
+  yo aura:component name
+
+  This will create:
+    app/aura_components/name/main.js

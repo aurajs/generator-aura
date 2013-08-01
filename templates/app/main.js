@@ -1,8 +1,8 @@
 require.config({
   paths: {
-    aura: 'components/aura/lib',
-    jquery: 'components/jquery/jquery',
-    underscore: 'components/underscore/underscore'
+    aura: 'bower_components/aura/lib',
+    jquery: 'bower_components/jquery/jquery',
+    underscore: 'bower_components/underscore/underscore'
   }
 });
 
@@ -15,5 +15,7 @@ require(['aura/aura'], function (Aura) {
   Add your extensions here.
   app.use('extensions/sample');
   */
-  app.start({ widgets: 'body' });
+  app.start({ components: 'body' }).then(function() {
+    console.log('Aura started...');
+  });
 });

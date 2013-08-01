@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
-    "bower": "~0.7.0",
+    "bower": "~1.0.0",
     "mocha": "~1.8.1",
     "chai": "~1.5.0",
     "sinon": "~1.5.2",
     "sinon-chai": "~2.3.1",
-    "grunt": "0.4.0rc7",
+    "grunt": "~0.4.x",
     "grunt-contrib-clean": "~0.4.0",
     "grunt-contrib-copy": "~0.4.0",
     "grunt-contrib-compass": "0.1.1rc8",
@@ -21,6 +21,6 @@
     "connect-livereload": "~0.1.4"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.x"
   }
 }
