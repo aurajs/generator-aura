@@ -1,5 +1,6 @@
 require.config({
   paths: {
+    eventemitter: 'bower_components/eventemitter2/lib/eventemitter2',
     aura: 'bower_components/aura/lib',
     jquery: 'bower_components/jquery/jquery',
     underscore: 'bower_components/underscore/underscore'
