@@ -45,24 +45,24 @@ module.exports = function (grunt) {
     requirejs: {
       compile: {
         options: {
-          baseUrl: '.',
-          optimize: 'none',
+          baseUrl: '<%= yeoman.app %>',
           paths: {
-            aura: 'app/bower_components/aura/lib',
+            aura: 'bower_components/aura/lib',
             jquery: 'empty:',
             underscore: 'empty:',
-            eventemitter: 'app/bower_components/eventemitter2/lib/eventemitter2'
+            eventemitter: 'bower_components/eventemitter2/lib/eventemitter2'
           },
           shim: {
             underscore: {
               exports: '_'
             }
           },
-          include: [
-            'app/main'
+          modules: [
+            {name: 'main'}
           ],
-          exclude: ['jquery', 'aura/aura'],
-          out: '<%= yeoman.dist %>/main.js'
+          dir: '<%= yeoman.dist %>',
+          fileExclusionRegExp: /^(tests?|spec|Gruntfile\.js)$/,
+          removeCombined: true
         }
       }
     },
@@ -92,8 +92,8 @@ module.exports = function (grunt) {
         },
         files: {
           src: [
-          'app/aura_components/**.js',
-          'app/extensions/**.js',
+          'app/aura_components/**/*.js',
+          'app/extensions/*.js',
           'app/main.js',
           ]
         }
@@ -155,6 +155,6 @@ module.exports = function (grunt) {
   // watch-spec allows us to use the spec task within a watch without having
   // connect try to launch a server on each cycle (which throws a Fatal error);
   grunt.registerTask('watch-spec', ['jshint', 'mocha']);
-  grunt.registerTask('build', ['clean', 'compass', 'spec', 'copy', 'requirejs']);
+  grunt.registerTask('build', ['clean', 'compass', 'spec', 'requirejs']);
   grunt.registerTask('default', ['compass', 'spec', 'watch']);
 };

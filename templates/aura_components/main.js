@@ -1,9 +1,10 @@
 define(['underscore'], function (_) {
+  'use strict';
 
   return {
 
     initialize: function () {
-      this.$el.on('click', this.someCoolFeature.bind(this));
+      this.$el.on('click', _.bind(this.someCoolFeature, this));
       this.render();
     },
 
@@ -12,10 +13,10 @@ define(['underscore'], function (_) {
       this.$el.html('Click me: ' + this.$el.html());
     },
 
-    someCoolFeature: function(){
+    someCoolFeature: function () {
       //Awesome code
       var element = this.$el;
-      element.fadeOut(200, function(){
+      element.fadeOut(200, function () {
         element.fadeIn(200);
       });
     }
