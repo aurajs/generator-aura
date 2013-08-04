@@ -87,4 +87,4 @@ See the [contributing docs](https://github.com/yeoman/yeoman/blob/master/contrib
 
 ## License
 
-[BSD license](http://opensource.org/licenses/bsd-license.php)
+[MIT license](http://opensource.org/licenses/mit-license.php)
