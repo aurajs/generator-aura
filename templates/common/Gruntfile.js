@@ -92,8 +92,8 @@ module.exports = function (grunt) {
         },
         files: {
           src: [
-          'app/aura_components/**.js',
-          'app/extensions/**.js',
+          'app/aura_components/**/*.js',
+          'app/extensions/*.js',
           'app/main.js',
           ]
         }
