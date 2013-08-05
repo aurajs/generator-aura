@@ -57,7 +57,7 @@ yo aura:component sample
 Produces `app/aura_components/sample/main.js`
 
 ### Extension
-Generates a extension in `app/extensions`.
+Generates an extension in `app/extensions`.
 
 Example:
 ```bash
