@@ -1,6 +1,7 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var chalk = require('chalk');
 
 module.exports = AppGenerator;
 
@@ -18,21 +19,22 @@ function AppGenerator() {
 util.inherits(AppGenerator, yeoman.generators.Base);
 
 AppGenerator.prototype.someQuestions = function someQuestions() {
-  var welcome = separator.yellow +
-    '\n                             _'.red.bold +
-    '\n      /\\                    '.yellow.bold + '(_)'.red.bold +
-    '\n     /  \\  _   _ _ __ __ _   '.yellow.bold + '_ ___ '.red.bold +
-    '\n    / /\\ \\| | | | \'__/ _` |'.yellow.bold + ' | / __|'.red.bold +
-    '\n   / ____ \\ |_| | | | (_| |_'.yellow.bold + '| \\__ \\'.red.bold +
-    '\n  /_/    \\_\\__,_|_|  \\__,_(_)'.yellow.bold + ' |___/'.red.bold +
-    '\n                           _/ |'.red.bold +
-    '\n                          ' + '|__/'.red.bold +
-    separator.yellow + '\n'.yellow;
+  var welcome = chalk.yellow(separator) +
+            chalk.red('\n                             _') +
+         chalk.yellow('\n      /\\                    ') +     chalk.red.bold('(_)') +
+    chalk.yellow.bold('\n     /  \\  _   _ _ __ __ _   ') +     chalk.red.bold('_ ___ ') +
+    chalk.yellow.bold('\n    / /\\ \\| | | | \'__/ _` |') +   chalk.red.bold(' | / __|') +
+    chalk.yellow.bold('\n   / ____ \\ |_| | | | (_| |_') +     chalk.red.bold('| \\__ \\') +
+    chalk.yellow.bold('\n  /_/    \\_\\__,_|_|  \\__,_(_)') +   chalk.red.bold(' |___/') +
+                                 chalk.red.bold('\n                           _/ |') +
+                            chalk.red.bold('\n                          ' + '|__/') +
+    chalk.yellow(separator) +
+    chalk.yellow('\n');
 
   console.log(welcome);
 
   console.info('Generating your awesome app. Stay tuned ;)');
-  console.info(separator);
+  console.info(chalk.yellow(separator));
 };
 
 AppGenerator.prototype.git = function git() {
@@ -100,10 +102,10 @@ AppGenerator.prototype.component = function component() {
 };
 
 AppGenerator.prototype.hint = function hint() {
-  console.info(separator);
-  console.info('\nReady.'.bold);
-  console.info('\nAfter selecting preferred style for your app just run ' + 'npm install'.bold.yellow +' and ' + 'bower install --dev'.bold.yellow + ' to install the required dependencies.');
-  console.info(separator);
+  console.info(chalk.yellow(separator));
+  console.info(chalk.bold('\nReady.'));
+  console.info('\nAfter selecting preferred style for your app just run ' + chalk.bold.yellow('npm install') +' and ' + chalk.bold.yellow('bower install --dev') + ' to install the required dependencies.');
+  console.info(chalk.yellow(separator));
 };
 
 AppGenerator.prototype.styles = function styles() {
