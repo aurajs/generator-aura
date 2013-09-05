@@ -21,7 +21,8 @@
     "test": "mocha --reporter spec -t 10000"
   },
   "dependencies": {
-    "yeoman-generator": "~0.13.4"
+    "yeoman-generator": "~0.13.4",
+    "chalk": "~0.2.1"
   },
   "devDependencies": {
     "mocha": "~1.12.1"
